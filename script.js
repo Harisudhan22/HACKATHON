@@ -10,13 +10,18 @@ const registerForm = document.querySelector("#registerForm")
 const togglePassword = document.querySelector(".toggle-password")
 const loginPassword = document.querySelector("#loginPassword")
 
-const darkModeBtn = document.querySelector("#darkMode")
+const closeBtn = document.querySelector(".icon-close")
 
 
 // popup open
 
 loginBtn.onclick = () =>{
 wrapper.classList.add("active-popup")
+}
+
+//close-button:
+closeBtn.onclick = () =>{
+wrapper.classList.remove("active-popup")
 }
 
 
@@ -101,21 +106,3 @@ alert("Invalid login")
 }
 
 })
-
-
-
-// DARK MODE
-
-darkModeBtn.onclick = ()=>{
-
-document.body.classList.toggle("dark")
-
-localStorage.setItem("theme",
-document.body.classList.contains("dark") ? "dark" : "light")
-
-}
-
-
-if(localStorage.getItem("theme") === "dark"){
-document.body.classList.add("dark")
-}
